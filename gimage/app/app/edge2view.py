@@ -41,7 +41,6 @@ def draw_circle(event, x, y, flags, param):
         cv2.circle(draw_img, (x, y), 1, (0, 0, 0), -1)
 
 def main():
-    print('XXXX')
     #TensorFlow
     graph = load_graph(args.frozen_model_file)
     image_tensor = graph.get_tensor_by_name('image_tensor:0')
@@ -51,7 +50,6 @@ def main():
     generated_image = np.zeros((512, 512, 3), np.uint8) + 255
     cv2.namedWindow('edge2view')
     cv2.setMouseCallback('edge2view', draw_circle)
-
 
     while True:
         # generate prediction
@@ -78,7 +76,6 @@ def main():
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--tf-model', dest='frozen_model_file', type=str, default='edge2view-reduced-model/frozen_model.pb',help='Frozen TensorFlow model file.')
+    parser.add_argument('--tf-model', dest='frozen_model_file', type=str, default='../../learning/frozen_inference_graph.pb',help='Frozen TensorFlow model file.')
     args = parser.parse_args()
-    print('XXX')
     main()
