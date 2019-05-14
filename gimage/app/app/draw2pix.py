@@ -57,7 +57,7 @@ image_rgb = cv2.cvtColor(combined_image, cv2.COLOR_BGR2RGB)
 #cv2.waitKey(0)
 
 # Predict colored image
-pred = remote.execute_multi("http://130.61.99.135:9008", [image_rgb], ['image_tensor'], ['generate_output/output'])
+pred = remote.execute_multi("http://130.61.99.135:9041", [image_rgb], ['image_tensor'], ['generate_output/output'])
 
 print(pred[0][0].shape)
 print(pred[0][0])

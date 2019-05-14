@@ -21,7 +21,7 @@ cv2.waitKey(0)
 generated_image = np.zeros((256, 256, 3), np.uint8) + 255
 combined_image = np.concatenate([org_pred, generated_image], axis=1)
 image_rgb = cv2.cvtColor(combined_image, cv2.COLOR_BGR2RGB)
-pred = remote.execute_multi("http://130.61.99.135:9008", [image_rgb], ['image_tensor'], ['generate_output/output'])
+pred = remote.execute_multi("http://130.61.99.135:9041", [image_rgb], ['image_tensor'], ['generate_output/output'])
 
 # show colored image
 image_bgr = cv2.cvtColor(pred[0][0], cv2.COLOR_RGB2BGR)

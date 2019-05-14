@@ -76,6 +76,6 @@ def main():
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--tf-model', dest='frozen_model_file', type=str, default='../../learning/frozen_inference_graph.pb',help='Frozen TensorFlow model file.')
+    parser.add_argument('--tf-model', dest='frozen_model_file', type=str, default='../../learning/gimage_generator.pb',help='Frozen TensorFlow model file.')
     args = parser.parse_args()
     main()
